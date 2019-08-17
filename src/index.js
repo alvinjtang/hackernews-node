@@ -6,6 +6,10 @@ type Query {
     feed: [Link!]!
 }
 
+type Mutation {
+    post(url: String!, description: String!): Link!
+}
+
 type Link {
     id: ID!
     description: String!
@@ -36,4 +40,4 @@ const server = new GraphQLServer({
     resolvers,
 });
 
-server.start(() => console.log('Server is running on http://localhost:4000'))
+server.start(() => console.log('Server is running on http://localhost:4000'));
